@@ -2,7 +2,7 @@ var AWS = require("aws-sdk");
 var express = require('express');
 var router = express.Router();
 
-router.get('/insert', function(req, res, next) {
+router.get('/create', function(req, res, next) {
     AWS.config.region = 'us-east-1';
 
     var dynamodb = new AWS.DynamoDB();
