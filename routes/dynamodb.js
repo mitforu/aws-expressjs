@@ -39,7 +39,7 @@ router.get('/create', function(req, res, next) {
 });
 
 router.get('/insert', function(req, res, next) {
-    AWS.config.region = process.env.REGION
+    AWS.config.region = 'us-east-1';
     console.log("Comes here");
     var docClient = new AWS.DynamoDB.DocumentClient();
 
@@ -76,10 +76,7 @@ router.get('/insert', function(req, res, next) {
 
 router.get('/read', function(req, res, next) {
     console.log("reading item");
-    AWS.config.update({
-        region: "us-west-2",
-        endpoint: "http://localhost:8000"
-    });
+    AWS.config.region = 'us-east-1';
     var docClient = new AWS.DynamoDB.DocumentClient()
 
     var table = "Movies";
